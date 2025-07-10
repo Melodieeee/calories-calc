@@ -1,6 +1,8 @@
-# TDEE & BMR Calculator
+# [TDEE & BMR Calculator](https://github.com/Melodieeee/calories-calc)
 
 A modern React application for calculating Total Daily Energy Expenditure (TDEE) and Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation.
+
+See Demo here: https://calories-calc.vercel.app/
 
 ## Features
 
@@ -9,6 +11,12 @@ A modern React application for calculating Total Daily Energy Expenditure (TDEE)
 - **Weight Management**: Get calorie recommendations for weight loss and weight gain
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Modern UI**: Clean, intuitive interface built with Tailwind CSS
+
+## Screenshot
+
+![App Screenshot](./public/calories_calc_overview.png)
+
+*The TDEE & BMR Calculator app with a modern, responsive layout and always-visible footer.*
 
 ## Technologies Used
 

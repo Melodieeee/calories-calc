@@ -49,14 +49,14 @@ export default function Home() {
   };
 
   return (
-    <div 
-      className={`min-h-screen transition-all duration-300 ${
+    <div
+      className={`min-h-screen flex flex-col transition-all duration-300 ${
         currentTheme.isCustom ? 'custom-bg' : `bg-gradient-to-br ${currentTheme.background}`
       }`}
       style={currentTheme.isCustom ? { '--custom-gradient': currentTheme.customStyles?.background } as React.CSSProperties : {}}
     >
       {/* Header with language and color picker */}
-      <div className="flex justify-end p-4 gap-2">
+      <div className="flex justify-end p-4 gap-2 shrink-0">
         {/* Language Selector */}
         <div className="relative">
           <select
@@ -203,19 +203,22 @@ export default function Home() {
           )}
         </div>
       </div>
-
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
-            {t.title}
-          </h1>
-          <p className="text-gray-600 text-center text-lg mb-8">
-            {t.subtitle}
-          </p>
-          <CalorieCalculator language={language} currentTheme={currentTheme} />
+      <div className="flex-1 flex flex-col justify-center items-center max-h-[calc(100vh-120px)] overflow-hidden">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
+              {t.title}
+            </h1>
+            <p className="text-gray-600 text-center text-lg mb-8">
+              {t.subtitle}
+            </p>
+            <CalorieCalculator language={language} currentTheme={currentTheme} />
+          </div>
         </div>
       </div>
+      <footer className="w-full py-6 text-center text-gray-500 text-sm border-t border-gray-200 shrink-0">
+        MIT License © 2025 Melody Yu · <a href="https://github.com/Melodieeee/calories-calc" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">GitHub</a>
+      </footer>
     </div>
   );
 }
