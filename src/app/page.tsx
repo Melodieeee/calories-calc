@@ -53,7 +53,7 @@ export default function Home() {
       className={`min-h-screen transition-all duration-300 ${
         currentTheme.isCustom ? 'custom-bg' : `bg-gradient-to-br ${currentTheme.background}`
       }`}
-      style={currentTheme.isCustom ? { ['--custom-gradient' as any]: currentTheme.customStyles?.background } : {}}
+      style={currentTheme.isCustom ? { '--custom-gradient': currentTheme.customStyles?.background } as React.CSSProperties : {}}
     >
       {/* Header with language and color picker */}
       <div className="flex justify-end p-4 gap-2">
