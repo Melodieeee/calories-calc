@@ -51,9 +51,9 @@ export default function Home() {
   return (
     <div 
       className={`min-h-screen transition-all duration-300 ${
-        currentTheme.isCustom ? '' : `bg-gradient-to-br ${currentTheme.background}`
+        currentTheme.isCustom ? 'custom-bg' : `bg-gradient-to-br ${currentTheme.background}`
       }`}
-      style={currentTheme.isCustom ? { background: currentTheme.customStyles?.background } : {}}
+      style={currentTheme.isCustom ? { ['--custom-gradient' as any]: currentTheme.customStyles?.background } : {}}
     >
       {/* Header with language and color picker */}
       <div className="flex justify-end p-4 gap-2">
@@ -102,6 +102,7 @@ export default function Home() {
                       value={customColors.backgroundStart}
                       onChange={(e) => setCustomColors(prev => ({ ...prev, backgroundStart: e.target.value }))}
                       className="w-12 h-10 border border-gray-300 rounded cursor-pointer"
+                      title={t.backgroundStart}
                     />
                     <input
                       type="text"
@@ -124,6 +125,7 @@ export default function Home() {
                       value={customColors.backgroundEnd}
                       onChange={(e) => setCustomColors(prev => ({ ...prev, backgroundEnd: e.target.value }))}
                       className="w-12 h-10 border border-gray-300 rounded cursor-pointer"
+                      title={t.backgroundEnd}
                     />
                     <input
                       type="text"
@@ -146,6 +148,7 @@ export default function Home() {
                       value={customColors.buttonColor}
                       onChange={(e) => setCustomColors(prev => ({ ...prev, buttonColor: e.target.value }))}
                       className="w-12 h-10 border border-gray-300 rounded cursor-pointer"
+                      title={t.buttonColor}
                     />
                     <input
                       type="text"
